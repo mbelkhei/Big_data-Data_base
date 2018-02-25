@@ -6,7 +6,7 @@ from sklearn.preprocessing import scale
 
 K = 6
 
-# initialize Spark:
+# Create a SparkSession:
 conf = SparkConf().setMaster("local").setAppName("KMeans")
 sc = SparkContext(conf = conf)
 
@@ -23,7 +23,7 @@ def createClusteredData(N, k):
     X = array(X)
     return X
 
-# Load the data; note I am normalizing it with scale() - very important!
+# Load the data and normalize it
 data = sc.parallelize(scale(createClusteredData(100, K)))
 
 # Build the model (cluster the data)
