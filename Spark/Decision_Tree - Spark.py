@@ -3,7 +3,7 @@ from pyspark.mllib.tree import DecisionTree
 from pyspark import SparkConf, SparkContext
 from numpy import array
 
-# initialize spark
+# Create a SparkSession:
 config = SparkConf().setMaster("local").setAppName("Decision_Tree")
 sc = SparkContext(conf = config)
 
